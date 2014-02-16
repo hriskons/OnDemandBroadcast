@@ -82,19 +82,6 @@ REQ_LIST_T* generate_req_list(){
 
 		}
 	}
-
-
-	// print list before return...
-	printf("Printing requests...\n");
-	for( curr_request = list->head ; curr_request; curr_request = curr_request->next){
-		printf("Client id  = %d\n", curr_request->client_id);
-		printf("Request id = %d\n",curr_request->request_id);
-		printf("Request objects = ");
-		for( k = 0 ; k < curr_request->req_size ; k++)
-			printf("%d ", curr_request->req_objects[k]);
-		printf("\nStarting slot = %d\n", curr_request->s_time_stamp);
-		printf("Deadline = %d\n----------------------------------\n", curr_request->deadline);
-	}
 	return list;
 }
 
