@@ -115,3 +115,19 @@ int add_to_list(REQ_LIST_T* list, REQ_T* request){
 
 	return 1;
 }
+
+void free_req_list(REQ_LIST_T * req_list){
+
+	REQ_T* temp;
+
+
+	while(req_list->head){
+		temp = req_list->head->next;
+		free(req_list->head->req_objects);
+		free(req_list->head);
+
+		req_list->head = temp;
+	}
+
+	free(req_list);
+}
