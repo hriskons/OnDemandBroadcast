@@ -17,7 +17,8 @@ typedef struct req_list{
 	int req_num_clients;
 	
 	REQ_T *head; /* The header pointer for the first list */
-
+	REQ_T *tail;
+	
 }REQ_LIST_T;
 
 
