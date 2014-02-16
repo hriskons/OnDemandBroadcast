@@ -20,7 +20,7 @@ typedef struct req_list{
 
 }REQ_LIST_T;
 
-REQ_LIST_T* read_req_list(char *filename);
+REQ_LIST_T* generate_req_list();
 
 void free_req_list(REQ_LIST_T * req_list);
 
