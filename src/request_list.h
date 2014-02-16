@@ -20,9 +20,13 @@ typedef struct req_list{
 
 }REQ_LIST_T;
 
+
+#define NUM_CLIENTS 5						// number of clients 
+#define SIM_SLOTS   100						// simulation slots between [0, SIM_SLOTS]
+#define MAX_OBJECTS_PER_REQUEST 5			// max objects per request
+#define MAX_REQUEST_OBJECT		25			// request objects between [0, MAX_REQUEST_OBJECT]
+
 REQ_LIST_T* generate_req_list();
-
 void free_req_list(REQ_LIST_T * req_list);
-
-
+int add_to_list(REQ_LIST_T* list, REQ_T* request);
 #endif
