@@ -3,8 +3,10 @@
 
 typedef struct req_t{
 	int client_id;
+	int request_id;
 	int *req_objects;
 	int req_size;
+	int remaining_requests;
 	int s_time_stamp;
 	int deadline;
 
@@ -23,7 +25,7 @@ typedef struct req_list{
 
 
 #define NUM_CLIENTS 5						// number of clients 
-#define SIM_SLOTS   100						// simulation slots between [0, SIM_SLOTS]
+#define SIM_SLOTS   50						// simulation slots between [0, SIM_SLOTS]
 #define MAX_OBJECTS_PER_REQUEST 5			// max objects per request
 #define MAX_REQUEST_OBJECT		25			// request objects between [0, MAX_REQUEST_OBJECT]
 
