@@ -11,11 +11,8 @@ REQ_LIST_T* generate_req_list(){
 	int client_id; 
 	int p = 2;
 	int pp = 4;
-	int slot_num_requests;
-	int k;
-
+	int counter = 0;
 	REQ_LIST_T* list = NULL;
-	REQ_T* curr_request = NULL;
 
 	list = (REQ_LIST_T*) malloc(sizeof(REQ_LIST_T));
 	if(!list)
@@ -75,13 +72,14 @@ REQ_LIST_T* generate_req_list(){
 					}
 					new_request->s_time_stamp = curr_slot;
 					new_request->deadline = generate_random() % 11 + curr_slot + 2 ;
-
+					counter++;
 					add_to_list(list, new_request);
 				}
 			}
 
 		}
 	}
+	printf("TOTAL REQUESTS:%d\n",counter);
 	return list;
 }
 
@@ -96,7 +94,6 @@ int add_to_list(REQ_LIST_T* list, REQ_T* request){
 	
 	request->next = NULL;
 	request->request_id = list->num_req;
-	REQ_T* curr;
 
 	if( list->num_req == 0 ){
 		list->head = request;
